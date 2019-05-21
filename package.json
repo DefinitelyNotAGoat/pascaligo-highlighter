@@ -1,0 +1,25 @@
+{
+    "name": "ligo",
+    "displayName": "ligo",
+    "description": "Ligo is a layer 2 smart contract language for the Tezos Blockchain.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.34.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "ligo",
+            "aliases": ["ligo", "ligo"],
+            "extensions": ["ligo"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "ligo",
+            "scopeName": "source.ligo",
+            "path": "./syntaxes/ligo.tmLanguage.json"
+        }]
+    }
+}
