@@ -3,19 +3,52 @@
 	"name": "ligo",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#controlkeywords"
+		},
+		{
+			"include": "#function"
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#multilineComment"
+		},
+		{
+			"include": "#singlequotes"
+		},
+		{
+			"include": "#type"
+		},
+		{
+			"include": "#otherkeywords"
 		}
 	],
 	"repository": {
-		"keywords": {
+		"controlkeywords": {
 			"patterns": [{
 				"name": "keyword.control.ligo",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "\\b(if|while|for|return|nil|remove|from|else|then)\\b"
 			}]
 		},
+		"otherkeywords": {
+			"patterns": [{
+				"name": "keyword.other.ligo",
+				"match": "\\b(skip|with|is|function|var|const|type|end|begin|block)\\b"
+			}]
+		},
+		"function": {
+			"patterns": [
+				{
+					"name": "entity.name.function.ligo",
+					"match": "(?i:(?!\\$[a-z_][a-z0-9_]*-&gt;)([a-z_][a-z_0-9]*)\\s*\\()"
+				}
+			]
+		},
+		
 		"strings": {
 			"name": "string.quoted.double.ligo",
 			"begin": "\"",
@@ -25,6 +58,34 @@
 					"name": "constant.character.escape.ligo",
 					"match": "\\\\."
 				}
+			]
+		},
+		"singlequotes" : {
+			"name": "string.quoted.single.ligo",
+			"begin": "\\'",
+			"end": "\\'",
+			"patterns" : []
+		},
+		"comment": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.ligo",
+					"match": "(//.*)"
+				}
+			]
+		},
+		"multilineComment" : {
+			"name" : "comment.line.double-slash.ligo",
+			"begin" : "\\(\\*",
+			"end" : "\\*\\)",
+			"patterns" : []
+		},
+		"type" : {
+			"patterns" : [ 
+				{
+					"name" : "support.type.ligo",
+					"match": "\\b(int|unit|string|nat|map)\\b"
+				}	
 			]
 		}
 	},
