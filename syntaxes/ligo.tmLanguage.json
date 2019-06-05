@@ -24,27 +24,36 @@
 			"include": "#type"
 		},
 		{
+			"include": "#typeDeclaration"
+		},
+		{
 			"include": "#otherkeywords"
+		},
+		{
+			"include": "#variableInit"
+		},
+		{
+			"include": "#variableDeclaration"
 		}
 	],
 	"repository": {
 		"controlkeywords": {
 			"patterns": [{
 				"name": "keyword.control.ligo",
-				"match": "\\b(if|while|for|return|nil|remove|from|else|then)\\b"
+				"match": "\\b(if|while|for|return|nil|remove|from|else|then|True|False|skip)\\b"
 			}]
 		},
 		"otherkeywords": {
 			"patterns": [{
 				"name": "keyword.other.ligo",
-				"match": "\\b(skip|with|is|function|var|const|type|end|begin|block)\\b"
+				"match": "\\b(with|is|function|var|const|type|end|begin|block)\\b"
 			}]
 		},
 		"function": {
 			"patterns": [
 				{
 					"name": "entity.name.function.ligo",
-					"match": "(?i:(?!\\$[a-z_][a-z0-9_]*-&gt;)([a-z_][a-z_0-9]*)\\s*\\()"
+					"match": "\\w+ ?(?=\\()"
 				}
 			]
 		},
@@ -85,6 +94,30 @@
 				{
 					"name" : "support.type.ligo",
 					"match": "\\b(int|unit|string|nat|map)\\b"
+				}	
+			]
+		},
+		"typeDeclaration" : {
+			"patterns" : [ 
+				{
+					"name" : "support.type.ligo",
+					"match": "\\w+ ?(?=is)"
+				}	
+			]
+		},
+		"variableInit" : {
+			"patterns" : [ 
+				{
+					"name" : "support.variable.ligo",
+					"match": "\\w+ ?(?=\\:\\=)"
+				}	
+			]
+		},
+		"variableDeclaration" : {
+			"patterns" : [ 
+				{
+					"name" : "support.variable.ligo",
+					"match": "\\w+ ?(?=\\:)"
 				}	
 			]
 		}
