@@ -8,6 +8,7 @@
 		{
 			"include": "#function"
 		},
+		
 		{
 			"include": "#strings"
 		},
@@ -53,11 +54,10 @@
 			"patterns": [
 				{
 					"name": "entity.name.function.ligo",
-					"match": "\\w+ ?(?=\\()"
+					"match": "(?!with\\b)\\b\\w+ ?(?=\\()"
 				}
 			]
 		},
-		
 		"strings": {
 			"name": "string.quoted.double.ligo",
 			"begin": "\"",
@@ -101,7 +101,7 @@
 			"patterns" : [ 
 				{
 					"name" : "support.type.ligo",
-					"match": "\\w+ ?(?=is)"
+					"match": "\\w+ ?(?= is )"
 				}	
 			]
 		},
