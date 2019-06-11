@@ -1,6 +1,6 @@
 {
     "name": "ligo",
-    "publisher": "Brice",
+    "publisher": "Ligo",
     "displayName": "ligo",
     "icon": "logo.png",
     "repository": {
@@ -8,7 +8,7 @@
         "url": "https://github.com/DefinitelyNotAGoat/pascaligo-highlighter.git"
     },
     "description": "Ligo is a layer 2 smart contract language for the Tezos Blockchain.",
-    "version": "0.0.5",
+    "version": "1.0.0",
     "engines": {
         "vscode": "^1.34.0"
     },
